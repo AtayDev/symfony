@@ -9,6 +9,7 @@
             <h5 class="card-title">Code: {{book.id}}</h5>
             <h5 class="card-title">Author: {{book.author}}</h5>
             <h5 class="card-title">Written At: {{book.writtenAt |date('d/m/y') }}</h5>
+            <h5 class="card-title">Rating: {{book.rating}}</h5>
         </div>
         <div class="card-body">
            <img src="{{book.image}}"/>
@@ -17,7 +18,8 @@
             <p class="card-text">Description: {{book.description}}</p>
         </div>
         <div class="card-footer text-muted">
-            Rating: {{book.rating}}
+           <a href="/product/{{book.id}}" class="btn btn-primary">Edit</a>
+           <a href="/product/delete/{{book.id}}" class="btn btn-danger">Delete</a>
         </div>
 </div>
 

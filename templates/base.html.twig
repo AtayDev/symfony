@@ -10,7 +10,7 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" href="/index">Bookstore</a>
+            <a class="navbar-brand" href="/">Bookstore</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -19,19 +19,13 @@
                 <ul class="navbar-nav mr-auto">
             
                 <li class="nav-item">
-                    <a class="nav-link" href="/new">Add a product</a>
+                    <a class="nav-link" href="{{path('create_product')}}">Add a product</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/modify">Modify a product</a>
+                    <a class="nav-link" href="{{path('show_clients')}}">Clients list</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/delete">Delete a product</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/clients">Client list</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/orders">Orders list</a>
+                    <a class="nav-link" href="{{path('show_orders')}}">Orders list</a>
                 </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
