@@ -1,0 +1,13 @@
+{% extends "base.html.twig"%}
+{% form_theme formBook 'bootstrap_4_layout.html.twig' %}
+{% block body%}
+<h1 style="text-align:center; margin-top:20px;"> Add a product</h1>
+
+{{form_start(formBook)}}
+
+{{form_widget(formBook)}}
+
+<button type="submit" class="btn btn-primary">Save</button>
+{{form_end(formBook)}}
+
+{% endblock %}

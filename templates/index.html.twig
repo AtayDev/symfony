@@ -1,0 +1,25 @@
+{% extends "base.html.twig"%}
+
+{% block body%}
+<h1 style="text-align:center; margin-top:20px;"> List of Books</h1>
+{% for book in books %}
+<div class="card mb-3">
+    <h3 class="card-header">{{book.title}}</h3>
+        <div class="card-body">
+            <h5 class="card-title">Code: {{book.id}}</h5>
+            <h5 class="card-title">Author: {{book.author}}</h5>
+            <h5 class="card-title">Written At: {{book.writtenAt |date('d/m/y') }}</h5>
+        </div>
+        <div class="card-body">
+           <img src="{{book.image}}"/>
+        </div>
+        <div class="card-body">
+            <p class="card-text">Description: {{book.description}}</p>
+        </div>
+        <div class="card-footer text-muted">
+            Rating: {{book.rating}}
+        </div>
+</div>
+
+{% endfor %}
+{% endblock %}
