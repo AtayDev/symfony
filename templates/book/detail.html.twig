@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{book.title }}{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row mt-3 mb-4">
+            <div class="col-md-4">
+                <img src="{{ book.image}}" alt="{{ book.title }}" class="img-fluid">
+            </div>
+            <div class="col-md-8">
+                <h3 class="mt-4 mt-md-0">{{ book.title }}</h3>
+                <hr>
+                <b>Author : </b> {{ book.author	 }}<br><br>
+                <b>Description: </b> <br>{{ book.description	 }}
+                <form class="mt-4 p-4 bg-light" method="post">
+				                <h4 style="text-align: right;">Price : {{ book.price }} €</h4>
+
+                    <div class="form-group">
+                        <label for="quantity">Quantity</label>
+                        <input type="number" class="form-control" id="quantity">
+                    </div>
+                    <center><button class="btn btn-warning">Add to Cart</button></center>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

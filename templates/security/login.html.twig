@@ -1,0 +1,79 @@
+{# templates/security/login.html.twig #} {% extends 'base.html.twig' %} {% block
+title %}Log in!{% endblock %} {% block body %}
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 ml-md-auto">
+      <div class="">
+        <div class="card bg-light mb-3 mt-5" style="width: 800px;">
+          <div class="card-body">
+            <form class="form-horizontal" role="form" method="post">
+              <AmpContent>
+             
+            <center> <h4>Weclome to <b> Bookstore </b> </h4></center><br>
+			 
+			
+
+</NonAmpContent> 
+              <div class="card-header mb-3"> <h6>Please enter your credentials carefully</h6></div>
+               {% if error %}
+            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+			  <div class="form-group">
+                <label for="email" class="col-md-4 control-label"
+                  ><h6>E-mail  </h6></label
+                >
+                <div class="col-md-12">
+                  <input
+                    id="inputEmail"
+                    type="email"
+                    class="form-control"
+                    name="email"
+                    value="{{ last_username }}"
+					placeholder="Enter your email"
+                    required
+                    autofocus
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="password" class="col-md-4 control-label"
+                  ><h6>Password</h6></label
+                >
+                <div class="col-md-12">
+                  <input
+                    id="inputPassword"
+                    type="password"
+                    class="form-control"
+                    name="password"
+					placeholder="Enter your password"
+                    required
+                  />
+                </div>
+              </div>
+              <input
+                type="hidden"
+                name="_csrf_token"
+                value="{{ csrf_token('authenticate') }}"
+              />
+              <div class="form-group">
+                <div class="col-md-12">
+                  <center><button style="width: 160px;" type="submit" class="btn btn-warning ">
+                    <i class="fa fa-btn fa-sign-in"></i> &nbsp; Login
+                  </button></center>
+                </div>
+				
+              </div>
+			              <center> <h6>You don't have an account? <b> <a href="{{ path('registration') }}">Sign up now</a> </b> </h4></center><br>
+
+ 
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
